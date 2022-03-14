@@ -1,8 +1,8 @@
-name: 自動化
+name: automation
 
 on:
   schedule:
-    - cron: "0 5,17 * * *"
+    - cron: "0 15,16 * * *"
   workflow_dispatch:
 
 jobs:
@@ -12,9 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Bahamut Automation
-        uses: JacobLinCool/Bahamut-Automation@1.0.0-pre.5
+        uses: JacobLinCool/Bahamut-Automation@action
         with:
-          modules: "login,ad_handler,sign,report,guild,report,answer,report,lottery,report,logout,report,telegram"
-          parameters: ${{ secrets.parameters || '{}' }}
-          secrets: ${{ secrets.secrets }}
+          modules: "report,ad_handler,cookie_login,sign,guild,answer,lottery,del_mail,report,discord,issue"
+          parameters: '{ "lottery_max_parallel": 3, "del_mail_match": [ { "title": "【勇者福利社】成功獲得抽獎資格通知信" }, { "title": "動畫瘋獲獎通知" } ], "only_failed": true }'
+          secrets: ${{ secrets.SECRETS }}
       - uses: gautamkrishnar/keepalive-workflow@master
