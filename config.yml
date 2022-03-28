@@ -19,8 +19,8 @@ modules:
     lottery:
         max_attempts: 20 # 每個最多嘗試 20 次
         max_parallel: 3 # 並行執行的最大數量
-    # del_mail:
-    #     match: [{ title: "【勇者福利社】成功獲得抽獎資格通知信" }]
+    del_mail:
+        match: [{ title: "【勇者福利社】成功獲得抽獎資格通知信" }]
     logout:
 
     # 以下是寄報告的部分
