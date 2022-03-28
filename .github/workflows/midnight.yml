@@ -1,14 +1,14 @@
-name: 手動觸發的自動化 (MacOS)
+name: 午夜的自動化
 
 on:
-    workflow_dispatch:
+    schedule:
+        - cron: "30 16 * * *"
 
 jobs:
     automation:
         name: 自動化
         runs-on: macos-latest
         steps:
-            - uses: actions/checkout@v2
             - name: Bahamut Automation
               uses: JacobLinCool/Bahamut-Automation@action
               with:
