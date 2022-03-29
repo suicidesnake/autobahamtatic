@@ -10,8 +10,9 @@ jobs:
         runs-on: macos-latest
         steps:
             - uses: actions/checkout@v2
+            - uses: gautamkrishnar/keepalive-workflow@master
             - name: Bahamut Automation
               uses: JacobLinCool/Bahamut-Automation@action
               with:
-                  config: config.yml
-                  secrets: ${{ secrets.SECRETS }}
+                  config: "config.yml"
+                  secrets: ${{ secrets.secrets }}
